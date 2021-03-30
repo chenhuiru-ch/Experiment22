@@ -5,6 +5,9 @@ package bao;
 **/
 public class Time {
     public static void main(String[] args) {
+    	//开始计时
+    	long startTime = System.currentTimeMillis();
+    	
     	//物品的重量
         int[] w={508,1021,1321,111,1098,1196,204,939,1107,399,474,719,803,1054,1781,525,1050,1362,530,641,903,432,583,894,754,806,1241,1056,1092,1545};
         //物品的价值
@@ -39,7 +42,7 @@ public class Time {
         }
 
         
-        //打印结果：
+        //输出结果
         for (int i = 0; i < v.length; i++) {
             for (int j = 0; j < v[0].length; j++) {
                 System.out.print(v[i][j]+" ");
@@ -48,7 +51,7 @@ public class Time {
 
 
         
-        //最后一次存放进背包的组合：
+        //最后一次存放进背包的组合
         System.out.println("最优解为：");
         int i=path.length-1;//行的最大下标
         int j=path[0].length-1;//列的最大下标
@@ -60,6 +63,17 @@ public class Time {
             }
             i--;
         }
+        
+        System.out.println();
+        //结束时间
+      	long endTime = System.currentTimeMillis();
+      	//long类型时间差，单位毫秒
+      	long timeLong = endTime - startTime;
+      	//long类型时间差转为double类型时间差，单位毫秒
+      	double timeDouble= Double.parseDouble(Long.toString(timeLong));
+      	System.out.println("该方法执行时间为" + timeDouble+ "毫秒，即" + timeDouble/(double)1000 + "秒");
+        
     }
+
 }
 
